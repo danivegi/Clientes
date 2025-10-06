@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script lang="JavaScript">
+        /* 
+        Ejercicio: añadir a la clase Array un método llamado sin() que
+        devuelva un nuevo array con todos los valores diferentes al indicado.
+
+        Ejemplo de uso:
+        var array1 = [1, 2, 3, 4, 5];
+        var filtrado = array1.sin(4); // → [1, 2, 3, 5]
+        var filtrado = array1.sin('c'); // → Error en el parámetro
+        */
+
+        // Se añade un nuevo método llamado "sin" al prototipo de Array.
+        // Esto significa que todos los arrays podrán usar este método.
+        Array.prototype.sin = function(dato) {
+
+            // 1. Validación: comprobamos si el dato recibido NO es un número
+            if (isNaN(dato)) {
+                // Si no es número, se devuelve un mensaje de error
+                let error_filtrado = "DATO ERRONEO";
+                alert("El parámetro es incorrecto, introduzca un número entero");
+                return error_filtrado;
+
+            } else {
+                // 2. Convertimos el dato recibido a número entero
+                let elemmento = parseInt(dato);
+                console.log(elemmento); // Se muestra en consola para verificar
+
+                // 3. Creamos un array vacío donde guardaremos los valores filtrados
+                let filtrado = [];
+
+                // 4. Recorremos todos los elementos del array original (this hace referencia al array actual)
+                for (let x = 0; x < this.length; x++) {
+                    // Si el elemento actual es distinto al dato a eliminar...
+                    if (this[x] !== elemmento) {
+                        // ...lo añadimos al nuevo array "filtrado"
+                        filtrado.push(this[x]);
+                    }
+                }
+
+                // 5. Devolvemos el array filtrado como resultado
+                return filtrado;
+            }
+        }
+
+        // Creamos un array de prueba
+        let array1 = [1, 2, 3, 4, 5];
+
+        // Ejemplo correcto: se elimina el 5 del array
+        console.log(array1.sin(5));  // → [1, 2, 3, 4]
+
+        // Ejemplo incorrecto: se pasa una letra en lugar de número
+        console.log(array1.sin('c')); // → Muestra alerta y devuelve "DATO ERRONEO"
+    </script>
+
+</body>
+
+</html>

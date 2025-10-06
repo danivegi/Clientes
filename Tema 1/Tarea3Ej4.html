@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 3 Ejercicio 4</title>
+</head>
+<body>
+
+    <h3>Comunicación entre ventanas</h3>
+    <script lang="JavaScript">
+        function abrir(){
+            let url = document.getElementById("url").value;
+            let nuevaVentana = window.open("http://" + url, "secundaria", "width=800,height=600");
+            
+        }
+    </script>
+
+    <input type="text" id="url">
+    <input type="button" value="Mostrar URL en ventana secundaria" onclick="abrir();">
+    
+</body>
+</html>

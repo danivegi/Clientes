@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea1 Ej4</title>
+</head>
+
+<body>
+    <script lang="JavaScript">
+        /* Cree un script que defina un objeto llamado coches. Este objeto debe presentar 
+        las propiedades código, nombre y precio, además del método imprimeDatos, 
+        el cual escribe por pantalla los valores de sus propiedades.*/
+
+        function coches(codigo, nombre, precio) {
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.precio = precio;
+        }
+
+        coches.prototype.imprimeDatos = function() {
+            return ("codigo: " + this.codigo + ", nombre: " + this.nombre + ", precio: " + this.precio);
+        }
+
+        let cocheEj = new coches(17, "C4", 3300);
+        console.log(cocheEj.imprimeDatos());
+    </script>
+</body>
+
+</html>

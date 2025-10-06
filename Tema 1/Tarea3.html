@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 3</title>
+</head>
+<body>
+    
+    <h3>Ejercicio 2.</h3>
+    <script lang="JavaScript">
+        let correcto;
+        let base;
+        let potencia;
+        do {
+            base = parseInt(prompt("Introduce la base de la potencia:"));
+            potencia = parseInt(prompt("Introduce su potencia:"));
+            correcto = !isNaN(base) && !isNaN(potencia);
+        } while(!correcto);
+
+        if (potencia == 0) {
+            document.write(base + " elevado a " + potencia + " = 1");
+        }
+
+        let resultado = 1;
+        if (potencia > 0) {
+            for (let x = 1; x <= potencia; x++) {
+                resultado *= base;
+            }
+            document.write(base + " elevado a " + potencia + " = " + resultado);
+        }
+
+        
+        if (potencia < 0) {
+            potencia = potencia * -1;
+            for (let x = 1; x <= potencia; x++) {
+                resultado *= base;
+            }
+            let resultadoFinal = 1 / resultado;
+            document.write(base + " elevado a " + potencia + " = " + resultadoFinal);
+        }
+    </script>
+
+    <h3>Ejercicio 1.</h3>
+    <script lang="JavaScript">
+        let num;
+        let correcto2;
+        do {
+            correcto2 = true;
+            num = parseInt(prompt("Introduzca un número:"));
+            if (isNaN(num)) {
+                correcto2 = false;
+            }
+        } while(!correcto2);
+
+        if (num % 2 == 0) {
+            document.write(num + " es un número par.");
+        } else {
+            document.write(num + " es un número impar.");
+        }
+    </script>
+
+    <h3>Ejercicio 3.</h3>
+    <script lang="JavaScript">
+        let filas;
+        let columnas;
+
+        do {
+            filas = parseInt(prompt("Introduce el número de filas entre 10 y 20:"));
+        } while(isNaN(filas) || filas < 10 || filas > 20);
+
+        do {
+            columnas = parseInt(prompt("Introduce el número de columnas entre 10 y 20:"));
+        } while(isNaN(columnas) || columnas < 10 || columnas > 20);
+
+        document.write("<table border = 1px>");
+
+            let cont = 1;
+            for (let x = 0; x < filas; x++) {
+                document.write("<tr>");
+                    for (let y = 0; y < columnas; y++) {
+                        document.write("<td>" + cont + "</td>");
+                        cont++;
+                    }
+                    document.write("</tr>");
+            }
+        document.write("</table>");
+    </script>
+</body>
+</html>

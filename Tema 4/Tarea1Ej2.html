@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script lang="JavaScript">
+        String.prototype.truncar = function(longitud) {
+            
+            if (isNaN(longitud) || longitud < 0) {
+                throw new Error("Error: El parámetro debe ser un número entero positivo.");
+            }
+
+            if (longitud >= this.length) {
+                return this.toString();
+            }
+
+            return this.substring(0, longitud);
+        }
+
+        let cadena = "hola mundo";
+
+        let cadena2 = cadena.truncar(6);
+        console.log(cadena2);
+
+        let cadena3 = cadena.truncar(20);
+        console.log(cadena3);
+
+        let cadena4 = cadena.truncar(-3);
+    </script>
+    
+</body>
+</html>

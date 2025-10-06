@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 5</title>
+</head>
+<body>
+    <h4>Pidiendo datos...</h4>
+    <script lang="JavaScript">
+        let nombre = prompt("Introduzca su nombre:");
+        let apellidos = prompt("Introduzca sus apellidos:");
+        let dia = parseInt(prompt("Introduzca su día de nacimiento:"));
+        let mes = parseInt(prompt("Introduzca su mes de nacimiento:"));
+        let ano = parseInt(prompt("Introduzca su año de nacimiento:"));
+
+        let nombreCompleto = nombre + apellidos;
+        document.writeln("Hola " + nombre);
+        document.writeln("Tu nombre completo (nombre y apellidos) tiene " + nombreCompleto.length + " caracteres, incluido espacios:");
+        document.writeln("La primera letra 'a' de tu nombre está en la posición: " + nombre.indexOf("a"));
+        document.writeln("La primera letra 'a' de tu apellido está en la posición: " + apellidos.indexOf("a"));
+    </script>
+    
+</body>
+</html>

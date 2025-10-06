@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+
+    <h4>Comprobando frase palindroma...</h4>
+    <script lang="JavaScript">
+        //1.- Realiza un script que dada una cadena que introducimos desde una prompt, comprobar si es o no un palíndromo.
+
+        let frase;
+        frase = prompt("Introduzca una frase: " + frase);
+        frase = frase.toLowerCase();
+        let fraseInv = "";
+
+        for (let x = frase.length; x >= 0; x --) {
+            let c = frase.charAt(x);
+            fraseInv += c;
+        }
+
+        alert("Frase invertida: " + fraseInv);
+        if (frase == fraseInv) {
+            alert ("La frase '" + frase + "' ES PALINDROMA");
+        } else {
+            alert ("La frase '" + frase + "' NO ES PALINDROMA");
+        }
+        
+    </script>
+    
+</body>
+</html>

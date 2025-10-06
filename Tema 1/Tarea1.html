@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tablas con Bucles en JavaScript</title>
+</head>
+<body>
+  <h2>TABLA DE MULTIPLICAR DEL 7</h2>
+  <pre id="tabla7"></pre>
+
+  <h2>TABLA DE SUMAR DEL 8</h2>
+  <pre id="tabla8"></pre>
+
+  <h2>TABLA DE DIVIDIR DEL 9</h2>
+  <pre id="tabla9"></pre>
+
+  <script>
+    // ---- TABLA DEL 7 (for) ----
+    let salida7 = "";
+    for (let i = 1; i <= 10; i++) {
+      salida7 += `7 x ${i} = ${7 * i}\n`;
+    }
+    document.getElementById("tabla7").textContent = salida7;
+
+    // ---- TABLA DEL 8 (while) ----
+    let salida8 = "";
+    let j = 1;
+    while (j <= 10) {
+      salida8 += `8 + ${j} = ${8 + j}\n`;
+      j++;
+    }
+    document.getElementById("tabla8").textContent = salida8;
+
+    // ---- TABLA DEL 9 (do...while) ----
+    let salida9 = "";
+    let k = 1;
+    do {
+      salida9 += `9 / ${k} = ${9 / k}\n`;
+      k++;
+    } while (k <= 10);
+    document.getElementById("tabla9").textContent = salida9;
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h4>Pidiendo nombre y edad...</h4>
+    <script lang="JavaScript">
+        //2.- Realiza un script que pida por teclado 3 edades y 3 nombres e indique el nombre del mayor.
+
+        let nombre1 = prompt("Indique el nombre del primer sujeto:");
+        let edad1 = parseInt(prompt("Indique la edad del primer sujeto:"));
+
+        let nombre2 = prompt("Indique el nombre del segundo sujeto:");
+        let edad2 = parseInt(prompt("Indique la edad del segundo sujeto:"));
+
+        let nombre3 = prompt("Indique el nombre del tercer sujeto:");
+        let edad3 = parseInt(prompt("Indique la edad del tercer sujeto:"));
+
+        if (edad1 > edad2 && edad1 > edad3) {
+            alert("El mayor es " + nombre1 + " con " + edad1 + " años.");
+        } else if (edad2 > edad1 && edad2 > edad3) {
+            alert("El mayor es " + nombre2 + " con " + edad2 + " años.");
+        } else if (edad3 > edad1 && edad3 > edad2){
+            alert("El mayor es " + nombre3 + " con " + edad3 + " años.");
+        }
+
+    </script>
+    
+</body>
+</html>

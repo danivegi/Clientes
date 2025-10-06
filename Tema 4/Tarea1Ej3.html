@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script lang="JavaScript">
+        // Extensión de String con método truncar mejorado
+        String.prototype.truncar = function (longitud, indicador = "") {
+            // 1. Validamos que la longitud sea un número válido y positivo
+            if (isNaN(longitud) || longitud < 0) {
+                throw new Error("Error: el parámetro debe ser un número entero positivo.");
+            }
+
+            // 2. Si la longitud es mayor o igual que la cadena, devolvemos la original
+            if (longitud >= this.length) {
+                return this.toString();
+            }
+
+            // 3. Restamos la longitud del indicador, para que no se sobrepase el límite
+            let parteVisible = this.substring(0, longitud - indicador.length);
+
+            // 4. Concatenamos la parte visible con el indicador
+            return parteVisible + indicador;
+        };
+
+
+        // Ejemplo de uso:
+        var cadena = "hola mundo";
+
+        var cadena1 = cadena.truncar(6);
+        console.log(cadena1); // "hola m"  (sin indicador, se corta normal)
+
+        var cadena2 = cadena.truncar(6, '***');
+        console.log(cadena2); // "hol***"
+
+        var cadena3 = cadena.truncar(20, '...');
+        console.log(cadena3); // "hola mundo" (como 20 > longitud, devuelve completa)
+
+        var cadena4 = cadena.truncar(4, '...');
+        console.log(cadena4); // "h..." (se ajusta al límite)
+
+    </script>
+</body>
+
+</html>
