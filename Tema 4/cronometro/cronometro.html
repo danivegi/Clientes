@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="cronometro.css">
+    <title>Cronómetro</title>
+</head>
+
+<body>
+    <script>
+        //declaro las variables que hay dentro del cronometro y el cronometro en ssi que lo convierto en un oobjeto con las caracteristicas d 
+       
+        let minutos = 0;
+        let segundos = 0; 
+        let decimasSegundo = 0;
+        let tiempo = 0;
+        let cronometro;
+
+        //Se activa al pulsar encender y lo que hago es que convirto la variable cronometro en un intervalo de tiempo que en verdad son segundos=tiempo()
+        function Encender() {
+
+            cronometro = setInterval(Tiempo, 10);
+        }
+        //la funcion clearinterval(), limpio el intervalo de cronometro
+        function Parar() {
+            clearInterval(cronometro);
+        }
+        //Reiniciar pone todas las variables a 0, incluido el div donde hemos puesto los numeros del cronometro: document.getElementById("contador").innerHTML="00:00:00"
+        function ReIniciar() {
+            clearInterval(cronometro);
+           
+            minutos = 0;
+            segundos = 0;
+            decimasSegundo = 0;
+            document.getElementById("contador").innerHTML = "00:00:00";
+        }
+
+        //funcion tiempo que va contando las decimas de segundo si lleva a x reseteo valores
+        function Tiempo() {
+            decimasSegundo++;
+            if (decimasSegundo == 99) {
+                decimasSegundo = 0;
+                segundos++;
+                if (segundos == 60) {
+                    segundos = 0;
+                    minutos++;
+                }
+            }
+            //formateamos para que en caso de que las variables sean de un solo digito se les ponga delante un 0
+            //IMPORTANTE: el? actua como un if los resultados se separan con :
+            let formatoMinutos = minutos < 10 ? "0" + minutos : minutos;
+            let formatoSegundos = segundos < 10 ? "0" + segundos : segundos;
+            let formatoDecimas = decimasSegundo < 10 ? "0" + decimasSegundo : decimasSegundo;
+             //instancio las variables declaradas anteriormento y las pongo como el contador 
+            document.getElementById("contador").innerHTML =
+                formatoMinutos + ":" + formatoSegundos + ":" + formatoDecimas;
+        }
+        </script>
+    <div id="botones">
+        <button onclick="Encender();">Encender</button>
+        <button onclick="Parar();">Parar</button>
+        <button onclick="ReIniciar();">Reiniciar</button>
+    </div>
+    <div id="contador">00:00:00</div>
+    <script src="cronometro.js"></script>
+</body>
+
+</html>

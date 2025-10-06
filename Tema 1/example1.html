@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*3.- Pagina html con un botón que me permita
+        abrir 5 ventanas y cada una de ellas con un botón para poder cerrar la ventana.*/
+        
+        function abrir() {
+            for (let x = 0; x < 5; x++) {
+                let ventana = window.open("", "_blank", "width=800 height=600");
+                ventana.document.write("<input type='button' value='Cerrar ventana' onclick='window.close()'>");
+            }
+        }
+
+
+    </script>
+    <input type="submit" value="Abrir múltiples ventanas..." onclick="abrir()">
+</body>
+</html>
