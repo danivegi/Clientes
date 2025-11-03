@@ -1,0 +1,98 @@
+<header>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <center>
+
+
+        <h1>
+            Formulario De Registro Online Carnet del Betis
+        </h1>
+    </center>
+    <style>
+        body {
+            background: #BBC6C7;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background: #169741;
+            color: white;
+            padding: 15px;
+        }
+
+        #errores {
+            float: left;
+            background: #FF6633;
+            width: 325px;
+            margin-left: 37%;
+        }
+        .error {
+            border: solid 2px #FF0000;
+
+        }
+    </style>
+</header>
+<center>
+
+    <br>
+    <br>
+    <fieldset>
+
+        <form name="formulario" id="formulario" method="get">
+            <label>Nombre: </label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+            <br>
+
+            <label>Apellidos: </label>
+            <input type="text" name="apellidos" id="apellidos">
+            <br>
+            <br>
+
+            <label>Fecha de nacimiento: </label>
+            <input type="text" name="fecha" id="fecha">
+            <br>
+            <br>
+
+            <label>DNI: </label>
+            <input type="text" name="dni" id="dni">
+            <br>
+            <br>
+
+            <label>Género:</label>
+            <select name="genero" id="genero">
+                <option value="0" selected="selected"> Selecciona un género</option>
+                <option value="Masc">Masculino</option>
+                <option value="Feme">Femenino</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <br>
+            <br>
+
+            <label>Email: </label>
+            <input type="email" name="email" id="email">
+            <br>
+            <br>
+
+            <label>Telefono: </label>
+            <input type="text" name="telefono" id="telefono">
+            <br>
+            <br>
+
+            <label>ID socio: </label>
+            <input type="text" name="id" id="idSocio">
+            <br>
+            <br>
+
+            <label>PIN socio: </label>
+            <input type="text" name="pin" id="pin">
+            <br>
+            <br>
+            <input type="reset" name="limpiar" id="button" value="Limpiar" />
+            <input type="submit" name="enviar" id="enviar" value="Enviar" />
+
+        </form>
+        <div id="errores"></div>
+        <script src="Validaciones.js"></script>
+    </fieldset>
+</center>

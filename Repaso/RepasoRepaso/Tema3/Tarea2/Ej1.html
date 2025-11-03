@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Introduce un texto:</p>
+    <input type="text" name="cadena" id="cadena">
+    <br>
+    <input type="button" value="Aceptar" onclick="generar()">
+
+    <script>
+        function generar() {
+
+        
+        //El perro de San Roque no tiene rabo porque Ramon Ramirez se lo ha cortado
+        let cadena = document.getElementById("cadena").value;
+        let ventana = window.open("", "SegundaPag", "width=800 height=600");
+        let palabras = cadena.split(" ");
+
+        ventana.document.writeln("Número de palabras: " + palabras.length + "<br>");
+        ventana.document.writeln("Primera palabra: " + palabras[0] + "<br>");
+        ventana.document.writeln("Última palabra: " + palabras[palabras.length - 1] + "<br>");
+
+        //Texto al revés
+        let cadenaInv = "";
+        for (let x = palabras.length - 1; x >= 0; x--) {
+            if (x == 0) {
+                cadenaInv += palabras[x];
+            } else {
+                cadenaInv += palabras[x] + "-";
+            }
+            
+        }
+        ventana.document.writeln("El texto al revés: " + cadenaInv + "<br>");
+
+        //Orden A - Z
+        let cadenaMinus = cadena.toLowerCase();
+        let palabrasMinus = cadenaMinus.split(" ");
+        let ordenAZ = palabrasMinus.sort();
+        ventana.document.writeln("Palabras en orden alfabético: " + ordenAZ + "<br>");
+
+        //Orden Z - A
+        let ordenZA = palabrasMinus.sort().reverse();
+        ventana.document.writeln("Palabras ordenadas alfabéticamente en orden inverso: " + ordenZA);
+        }
+    </script>
+</body>
+</html>
