@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <input type="text" id="nombre" placeholder="Introduce tu nombre">
+    <button id="enviar">Enviar</button>
+
+    <script>
+        document.getElementById("enviar").addEventListener("click", function() {
+            let nombre = document.getElementById("nombre").value;
+            alert(nombre + ", vas a ser redirigido al sitio del instituto.");
+            window.location.href = "https://www.iesexample.edu"; // cambia la URL
+        });
+    </script>
+</body>
+</html>

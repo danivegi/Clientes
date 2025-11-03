@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h3>Selecciona una opción:</h3>
+    <select id="opciones">
+        <option value="">-- Selecciona --</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+    </select>
+
+    <script>
+        document.getElementById("opciones").addEventListener("change", function() {
+            alert("Has seleccionado: " + this.value);
+        });
+    </script>
+</body>
+</html>

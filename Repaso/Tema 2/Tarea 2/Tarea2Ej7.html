@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Ejercicio 3:
+        Realiza un script que pida número de filas y columnas y escriba una tabla. El número de filas y columnas introducidas 
+        debe ser mayor o igual a 10 y menor o igual a 20. Si el dato no es correcto me lo vuelve a pedir.
+        En la tabla en cada celda escribirá un número consecutivo en orden ascendente.
+        Si, por ejemplo, la tabla es de 10x15 los números irán del 1 al 150. */
+
+        let filas = 0;
+        let columnas = 0;
+        let correcto;
+
+        do {
+            filas = parseInt(prompt("Introduce un numero de filas de 10 a 20:"));
+            correcto=true;
+            if (isNaN(filas) || filas < 10 || filas > 20) {
+                alert("Error, filas debe ser numérico y entre 10 y 20.");
+                correcto = false;
+            }
+        } while (!correcto);
+
+        do {
+            columnas = parseInt(prompt("Introduce un numero de columnas de 10 a 20:"));
+            correcto=true;
+            if (isNaN(columnas) || columnas < 10 || columnas > 20) {
+                alert("Error, columnas debe ser numérico y entre 10 y 20.");
+                correcto = false;
+            }
+        } while (!correcto);
+
+        let num = 1;
+        document.writeln("<table border=1px>");
+        for (let x = 0; x < filas; x++){
+            document.writeln("<tr>");
+            for (let y = 0; y < columnas; y++) {
+                document.write("<td>" + num + "</td>");
+                num++;
+            }
+            document.writeln("</tr>");
+        }
+        document.writeln("</table");
+
+
+    </script>
+</body>
+
+</html>

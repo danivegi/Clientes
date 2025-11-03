@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Realice un programa en JavaScript que:
+
+        Solicite al usuario una frase y la valide para que no esté vacía.
+        Luego pida otra cadena de texto para buscar dentro de la frase y la valide del mismo modo.
+        Cuente cuántas veces aparece esa cadena dentro de la frase.
+        Muestre el resultado con alert(). */
+
+        let frase = "";
+        let cadena = "";
+        let correcto;
+        do {
+            correcto = true;
+            frase = prompt("Introduce una frase:");
+            if (frase.length <= 0) {
+                alert("Error, la frase introducida está vacía.");
+                correcto = false;
+            }
+        } while(!correcto);
+
+        do {
+            correcto = true;
+            cadena = prompt("Introduce la cadena a buscar:");
+            if (cadena.length <= 0) {
+                correcto = false;
+                alert("Error, la cadena introducia está vacía.");
+            }
+        } while (!correcto);
+
+        let contador = 0;
+        let existe = 0;
+
+        do {
+            existe = frase.lastIndexOf(cadena);
+            frase = frase.replace(cadena, "");
+
+            if (existe > 0) {
+                contador++;
+            }
+        } while(existe >= 0);
+        
+        alert("La cadena: " + cadena + ", se repite " + contador + " veces.");
+
+    </script>
+    
+</body>
+</html>

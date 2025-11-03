@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Realiza un script que pida por teclado 3 edades y 3 nombres e indique el nombre del mayor.
+
+        let nombre1;
+        let edad1;
+        let nombre2;
+        let edad2;
+        let nombre3;
+        let edad3;
+        let correcto;
+
+        do {
+            nombre1 = prompt("Introduzca el nombre del primer usuario:");
+            correcto = true;
+            if (nombre1.length <= 0) {
+                correcto = false;
+                alert("Error, nombre vacío.");
+            }
+        } while (!correcto);
+
+        do {
+            edad1 = prompt("Introduzca la edad del primer usuario:");
+            correcto = true;
+            if (isNaN(edad1)) {
+                correcto = false;
+                alert("Error, la edad no es numérica.");
+            }
+        } while (!correcto);
+
+        do {
+            nombre2 = prompt("Introduzca el nombre del segundo usuario:");
+            correcto = true;
+            if (nombre2.length <= 0) {
+                correcto = false;
+                alert("Error, nombre vacío.");
+            }
+        } while (!correcto);
+
+        do {
+            edad2 = prompt("Introduzca la edad del segundo usuario:");
+            correcto = true;
+            if (isNaN(edad2)) {
+                correcto = false;
+                alert("Error, la edad no es numérica.");
+            }
+        } while (!correcto);
+
+        do {
+            nombre3 = prompt("Introduzca el nombre del tercer usuario:");
+            correcto = true;
+            if (nombre3.length <= 0) {
+                correcto = false;
+                alert("Error, nombre vacío.");
+            }
+        } while (!correcto);
+
+        do {
+            edad3 = prompt("Introduzca la edad del tercer usuario:");
+            correcto = true;
+            if (isNaN(edad3)) {
+                correcto = false;
+                alert("Error, la edad no es numérica.");
+            }
+        } while (!correcto);
+
+        if (edad1 > edad2 && edad1 > edad3) {
+            alert("El mayor es " + nombre1 + " con " + edad1 + " años.");
+        } else if (edad2 > edad1 && edad2 > edad3) {
+            alert("El mayor es " + nombre2 + " con " + edad2 + " años.");
+        } else {
+            alert("El mayor es " + nombre3 + " con " + edad3 + " años.");
+        }
+
+    </script>
+    
+</body>
+</html>

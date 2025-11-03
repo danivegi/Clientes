@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Realiza un script que dada una cadena que introducimos desde una prompt, comprobar si es o no un palíndromo.
+
+        let frase = prompt("Introduce una frase y el programa le dirá si es palíndroma o no.");
+        let fraseSE = frase.split(" ").join("").toLowerCase();
+        console.log(fraseSE);
+
+        let fraseInv = "";
+        for (let x = frase.length; x >= 0; x--) {
+            let c = fraseSE.charAt(x);
+            fraseInv += c;
+        }
+        console.log(fraseInv);
+
+        if (fraseSE == fraseInv) {
+            document.writeln("La frase : <b>" + frase + ".</b><br>");
+            document.writeln("Es palíndroma.");
+        } else {
+            document.writeln("La frase : <b>" + frase + ".</b><br>");
+            document.writeln("NO es palíndroma.");
+        }
+    </script>
+    
+</body>
+</html>

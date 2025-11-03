@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Abrimos y cerramos ventana</h1>
+    <script>
+        // Crear un script que me permita abrir una ventana y cerrar esa ventana. La
+        // ventana debe tener unas dimensiones de 800x600.
+        
+        let venatana;
+
+        function abrir() {
+            ventana = window.open("", "Segunda Pag", "width = 800 height = 600");
+        }
+
+        function cerrar() {
+            ventana.close();
+        }
+        
+    </script>
+    <input type="submit" value="Abrimos ventana" onclick="abrir()">
+    <input type="submit" value="Cerramos ventana" onclick="cerrar()">
+</body>
+</html>

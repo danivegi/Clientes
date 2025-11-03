@@ -1,0 +1,45 @@
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Despertador </title>
+        <style>
+            @font-face {
+                font-family:digital;
+                font-weight:4em;
+                font-style: normal;
+                src:url(./digital.ttf);
+            }
+        </style>
+
+        <script src="6.js">
+            //function inicializar() {
+                //var horactual = "XX:XX:XX";
+                //document.getElementById('hora').innerHTML = horactual;
+            //}
+        </script>
+    </head>
+
+    <body onload="inicializar();">
+        <br /><br />
+        <div style="margin: auto; max-width: 600px; border:4px groove black; background-color:darkslateblue; border-radius: 5px;">
+            <hr />
+            <div style="font-size:3em; text-align:center; color:greenyellow; text-shadow:2px 2px 2px white; background-color: black">HORA ACTUAL</div>
+            <hr />
+            <div id="hora" style="padding-top: 12px; padding-bottom: 18px; font-size:8em; font-family: digital,sans-serif,monospace; text-align:center; color:red; background-color: black">00:00:00</div>
+            <hr />
+        </div>
+		<br /><br />
+        <div style="max-width: 500px; margin: auto; text-align: center;">
+            <form>
+                <input id="horaInput" name="hora" type="text" value="00" size="2" minlength="2" maxlength="2"  />
+                <input id="minutosInput" name="minutos" type="text" value="00" size="2" minlength="2" maxlength="2" />
+                <input id="segundosInput" name="segundos" type="text" value="00" size="2" minlength="2" maxlength="2"  />
+                
+				<br /><br />
+                <input type="button" value="Activar" onclick="activar()" />
+                <input type="button" value="Desactivar" onclick="desactivar()" />
+            </form>
+        </div>
+        
+    </body>
+</html>

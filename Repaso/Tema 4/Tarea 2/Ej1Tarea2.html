@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Cree un script que defina un objeto llamado coches. Este objeto debe presentar las propiedades código ,
+        nombre y precio, además del método imprimeDatos , el cual escribe por pantalla los valores de sus
+        propiedades. */
+
+        function Coche(codigo, nombre, precio) {
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.precio = precio;
+
+            this.getNombre = function() {
+                return this.nombre;
+            }
+        
+            this.setNombre = function(nombre) {
+                this.nombre = nombre;
+            }
+
+            this.getCodigo = function() {
+                return this.codigo;
+            }
+
+            this.setCodigo = function(codigo) {
+                this.codigo = codigo;
+            }
+
+            this.getPrecio = function() {
+                return this.precio;
+            }
+
+            this.setPrecio = function(precio) {
+                this.precio = precio;
+            }
+
+        }
+
+        Coche.prototype.toString = function() {
+            return ("Nombre: " + this.getNombre() + ", Codigo: " + this.getCodigo() + ", Precio: " + this.getPrecio());
+        }
+
+        let coche1 = new Coche("001", "Citroen C4", "3300");
+        let coche2 = new Coche("002", "Fiat Punto", "2000");
+
+        console.log(coche1.toString());
+        console.log(coche2.toString());
+
+
+    </script>
+
+</body>
+
+</html>

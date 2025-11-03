@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Realiza una página para calcular los números pares, los impares y los primos entre el 50 y 100.
+
+        document.writeln("<b>Numeros pares entre 50 y 100:</b><br>");
+        for (let x = 50; x <= 100; x++){
+            if (x % 2 == 0) {
+                document.writeln(x + "<br>");
+            }
+        }
+
+        document.writeln("<br><b>Numeros impares entre 50 y 100:</b><br>");
+        for (let x = 50; x <= 100; x++) {
+            if (x % 2 != 0) {
+                document.writeln(x + "<br>");
+            }
+        }
+
+        document.writeln("<br><b>Numeros primos entre 50 y 100:</b><br>");
+        let esPrimo;
+        for(let x = 50; x <= 100; x++){
+            esPrimo = true;
+            for (let y = 2; y < x; y++) {
+                if (x % y == 0) {
+                    esPrimo = false;
+                }
+            }
+            if (esPrimo) {
+                document.writeln(x + "<br>");
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Escribe algo"><br><br>
+        <button type="button" id="mostrar">Mostrar</button>
+        <button type="button" id="ocultar">Ocultar</button>
+    </form>
+    <p id="mensaje" style="display:none;">¡Hola! Este es el texto oculto.</p>
+
+    <script>
+        document.getElementById("mostrar").addEventListener("click", function() {
+            document.getElementById("mensaje").style.display = "block";
+        });
+        document.getElementById("ocultar").addEventListener("click", function() {
+            document.getElementById("mensaje").style.display = "none";
+        });
+    </script>
+</body>
+</html>

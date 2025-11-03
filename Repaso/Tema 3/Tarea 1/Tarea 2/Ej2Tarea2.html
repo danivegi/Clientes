@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Panel Informativo Animado</title>
+<style>
+    #panel {
+        width: 400px;
+        height: 50px;
+        border: 2px solid #333;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        background-color: #f0f0f0;
+        font-size: 20px;
+        line-height: 50px;
+        padding-left: 10px;
+    }
+    #mensaje {
+        position: absolute;
+        white-space: nowrap;
+    }
+    input, button {
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Panel Informativo Animado</h2>
+<input type="text" id="texto" placeholder="Escribe tu mensaje aquí">
+<br>
+<button onclick="mostrarMensaje()">Mostrar mensaje</button>
+<button onclick="pausar()">Pausar</button>
+<button onclick="reanudar()">Reanudar</button>
+
+<div id="panel">
+    <div id="mensaje"></div>
+</div>
+
+<script>
+let mensaje = document.getElementById("mensaje");
+let panel = document.getElementById("panel");
+let intervalo;
+let posicion; // Posición actual del texto
+
+function mostrarMensaje() {
+    clearInterval(intervalo); // Limpiar cualquier animación previa
+    let texto = document.getElementById("texto").value;
+    mensaje.textContent = texto;
+    posicion = panel.offsetWidth; // Empieza fuera del panel a la derecha
+    mensaje.style.left = posicion + "px";
+
+    intervalo = setInterval(() => {
+        posicion--; // Mover a la izquierda
+        mensaje.style.left = posicion + "px";
+
+        // Reiniciar cuando el texto desaparezca por completo
+        if (posicion + mensaje.offsetWidth < 0) {
+            posicion = panel.offsetWidth;
+        }
+    }, 20); // Velocidad del desplazamiento
+}
+
+function pausar() {
+    clearInterval(intervalo);
+}
+
+function reanudar() {
+    clearInterval(intervalo);
+    intervalo = setInterval(() => {
+        posicion--;
+        mensaje.style.left = posicion + "px";
+
+        if (posicion + mensaje.offsetWidth < 0) {
+            posicion = panel.offsetWidth;
+        }
+    }, 20);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h3>Escribe algo:</h3>
+    <input type="text" id="texto">
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById("texto").addEventListener("input", function() {
+            document.getElementById("resultado").textContent = this.value.toUpperCase();
+        });
+    </script>
+</body>
+</html>

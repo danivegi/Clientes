@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Escriba un programa en JavaScript que:
+        Contenga una frase predefinida en una variable.
+        Pase todo el texto a minúsculas.
+        Recorra la frase y cuente cuántas veces aparece cada letra del abecedario (de la a a la z), 
+        ignorando espacios y signos.
+        Muestre la frase original y, debajo, el número de apariciones de cada letra utilizando document.write(). */
+
+        let frase = "Da siempre lo mejor de ti, lo que plantes ahora lo cosecharas mas tarde";
+        let letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        frase = frase.toLowerCase();
+        let contadores = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+        for (let x = 0; x < frase.length; x++) {
+            let c = frase.charAt(x);
+            for (let y = 0; y < letras.length; y++) {
+                if (c == letras[y]) {
+                    contadores[y]++;
+                }
+            }
+        }
+
+        for (let x = 0; x < contadores.length; x++) {
+            document.writeln("La letra " + letras[x] + " se repite " + contadores[x] + " veces. <br>");
+        }
+    </script>
+
+</body>
+
+</html>

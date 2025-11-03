@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.- Escribir los números primos comprencidos entre entre 1 y 10.
+        let esPrimo;
+        let num = 0;
+        for (let x = 1; x < 10; x++) {
+            esPrimo = true;
+            for (let y = 2; y < x; y++) {
+                if (x % y == 0) {
+                    esPrimo = false;
+                    break;
+                }
+            }
+            if (esPrimo) {
+                document.writeln(x + "<br>");
+            }
+        }
+    </script>
+    
+</body>
+</html>

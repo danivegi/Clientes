@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Realizar un script que para una cadena que introducimos desde una prompt, 
+        me cuente el número de vocales que tiene la cadena de texto. 
+        Ejemplo "El perro de San Roque no tiene rabo porque Rámon Rodríguez se lo ha cortado". */
+
+        let frase = prompt("Introduce una frase:");
+        frase = frase.toLowerCase();
+
+        let vocales = 0;
+        for (let x = 0; x <= frase.length; x++) {
+            let c = frase.charAt(x);
+            if (c == "a" || c == "e" || c == "i" || c == "o" || c == "u" || 
+                c == "á" || c == "é" || c == "í" || c == "ó" || c == "ú") {
+                    vocales++;
+                }
+        }
+        document.writeln("La frase tiene " + vocales + " vocales.");
+    </script>
+    
+</body>
+</html>

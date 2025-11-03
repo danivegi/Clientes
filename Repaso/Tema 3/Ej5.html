@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 2.- Realizar un script que realice lo siguiente:
+            a) Me solicita mi nombre y apellido
+            b) Me solicite el día, el mes y el año de nacimiento.
+            Después de recogidos estos datos me va a escribir en la ventana:
+            Hola XXXXX
+            o Tu nombre tiene XX caracteres, incluidos espacios.
+            o La primera letra A de tu nombre está en la posición: X
+            o La última letra A de tu nombre está en la posición: X
+            o Tu nombre menos las 3 primeras letras es: XXXXXXXX
+            o Tu nombre todo en mayúsculas es: XXXXXXXX
+            o Tu edad es: XX años.
+            o Naciste un feliz XXXXXX del año XXXX. */
+
+            let nombre = prompt("Introduce tu nombre:");
+            let apellidos = prompt("Introduce tus apellidos:");
+            let dia = prompt("Introduce tu dia de nacimiento:");
+            let mes = prompt("Introduce tu mes de nacimiento:");
+            let year = prompt("Introduce tu año de nacimiento:");
+
+            document.writeln("Buenos días, " + nombre + "<br>");
+            let nombreCompleto = nombre + apellidos;
+            document.writeln("Tu nombre completo (nombre y apellidos) tiene " + nombreCompleto.length + " caractéres, incluido espacios. <br>");
+
+            let posicion = nombre.indexOf('a') + 1;
+            document.writeln("La primera 'a' de tu nombre está en la posición: " + posicion + "<br>");
+            document.writeln("La última 'a' de tu nombre completo está en la posición: " + nombreCompleto.lastIndexOf('a') + "<br>");
+            document.writeln("Tu nombre menos las tres primeras letras: " + nombreCompleto.substring(3, nombreCompleto.length) + "<br>");
+            document.writeln("Tu nombre en mayúsculas es: " + nombreCompleto.toUpperCase() + "<br>");
+            let edad = 2025 - year;
+            document.writeln("Tu edad es de: " + edad + "<br>");
+
+            let estacion = "";
+            if (mes <= 3) {
+                estacion = "invierno";
+            } else if (mes > 3 && mes <= 6) {
+                estacion = "primavera";
+            } else if (mes > 6 && mes <= 9) {
+                estacion = "verano";
+            } else {
+                estacion = "otoño";
+            }
+            document.writeln("Naciste un feliz " + estacion + " de " + year);
+            
+    </script>
+
+</body>
+
+</html>

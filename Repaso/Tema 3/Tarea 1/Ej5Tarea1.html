@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <style>
+ body{
+ background-color: white;
+ }
+ </style>
+</head>
+<body onload="colores()">
+ <center><h1 style="font-family:'Comic Sans MS';">colorful</h1></center>
+ <script>
+ function colores() {
+ for (let index = 0; index < 5; index++) {
+ let r = Math.floor(Math.random() * 255);
+ let g = Math.floor(Math.random() * 255);
+ let b = Math.floor(Math.random() * 255);
+ let col = "rgb(" + r + "," + g + "," + b + ")";
+ setTimeout(()=>cambiarColor(col),1000*(index+1));
+ console.log(col)
+
+ }
+ }
+ function cambiarColor(col) {
+ document.body.style.background=col;
+ }
+ </script>
+</body>
+</html>

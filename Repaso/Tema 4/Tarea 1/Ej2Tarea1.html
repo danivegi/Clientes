@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Extender la clase String para que permita truncar una cadena de texto a 
+        un tamaño indicado como parámetro:
+
+        var cadena = "hola mundo";
+        cadena2 = cadena.truncar(6);  //cadena2 = "hola m"*/
+
+        String.prototype.truncar = function(limite) {
+            if (isNaN(limite)) {
+                let error = "Error, el limite no es numerico";
+                return error;
+            } else {
+                let frase = cadena.substring(0,limite);
+                return frase;
+            }
+        }
+
+        let cadena = "hola mundo";
+        console.log(cadena)
+        let cadena2 = cadena.truncar(6);
+        console.log(cadena2)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Animación de texto</h1>
+    <input type="text" name="texto" placeholder="Escriba aquí su texto...">
+    <input type="submit" value="Generar animación" name="encender">
+    <p id="resultado"></p>
+    <script>
+        let texto = document.getElementById("texto").value;
+        function encender() {
+            for (let x = 0; x < texto.length; x++) {
+                document.write(texto.charAt(x));
+                setInterval(encender, 1000);
+            }
+        }
+
+        encender();
+    </script>
+</body>
+</html>

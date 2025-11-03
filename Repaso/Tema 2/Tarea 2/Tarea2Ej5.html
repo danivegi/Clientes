@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Ejercicio 1:
+        Realice una página HTML que le pida un dato al usuario y le diga si el número es par o impar. 
+        Si el dato no es un número que me aparezca una ventana de alerta indicándomelo. */
+
+        let correcto;
+        let numero;
+
+        do {
+            numero = parseInt(prompt("Introduce un número:"));
+            correcto = true;
+            if (isNaN(numero)) {
+                correcto = false;
+                alert("Error, el dato introducido no es un número.");
+            }
+        } while(!correcto);
+
+        if (numero % 2 == 0) {
+            alert(numero + " es PAR.");
+        } else {
+            alert(numero + " es IMPAR.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Introduce un texto:</p>
+    <input type="text" name="cadena" id="cadena">
+    <br><br>
+    <input type="submit" value="Aceptar" onclick="generar()">
+
+    <script>
+        /* Leer una cadena de texto en un formulario y posteriormente, mostrar la siguiente información, 
+        en una nueva ventana:
+            Número de palabras,
+            primera palabra,
+            última palabra,
+            las palabras colocadas en orden inverso,
+            las palabras ordenadas de la a la z
+            las palabras ordenadas de la z a la a.
+            Sacar toda esta información en una ventana nueva. */
+
+            function generar() {
+                let frase = document.getElementById("cadena").value;
+                let ventana = window.open("", "SegundaPag", "width=800 height=600");
+                let palabras = frase.split(" ");
+                //Numero de palabras
+                ventana.document.writeln("Numero de palabras: " + palabras.length + "<br>");
+
+                //Primera palabra
+                ventana.document.writeln("Primera palabra: " + palabras[0] + "<br>");
+
+                //Ultima palabra
+                ventana.document.writeln("Última palabra: " + palabras[palabras.length - 1] + "<br>");
+
+                //Palabras en orden inverso
+                let fraseInv = "";
+                for (let x = palabras.length - 1; x >= 0; x--) {
+                    let pal = palabras[x] + " ";
+                    fraseInv += pal;
+                }
+                ventana.document.writeln("Palabras en orden inverso: " + fraseInv + "<br>");
+
+                //Orden de A-Z
+                let ordenAZ = palabras.sort((a,b) => a.localeCompare(b)).join(" ");
+                ventana.document.writeln("Orden alfabético: " + ordenAZ + "<br>");
+
+                //Orden Z-A
+                let ordenZA = palabras.sort((a,b) => b.localeCompare(a)).join(" ");
+                ventana.document.writeln("Orden alfabético al revés: " + ordenZA);
+            }
+    </script>
+    
+</body>
+</html>

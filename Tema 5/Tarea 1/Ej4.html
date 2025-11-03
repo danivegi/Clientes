@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h3>Escribe una frase:</h3>
+    <input type="text" id="texto1" placeholder="Escribe aquí">
+    <input type="text" id="texto2" readonly>
+    <input type="text" id="texto3" readonly>
+
+    <script>
+        document.getElementById("texto1").addEventListener("input", function() {
+            let texto = this.value;
+            let mayus = texto.toUpperCase();
+            let minus = texto.toLowerCase();
+
+            let t2 = document.getElementById("texto2");
+            let t3 = document.getElementById("texto3");
+
+            t2.value = mayus;
+            t2.style.color = "blue";
+
+            t3.value = minus;
+            t3.style.color = "green";
+            t3.style.fontStyle = "italic";
+        });
+    </script>
+</body>
+</html>

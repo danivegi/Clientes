@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Ejercicio 2:
+        Cree una página HTML e incluya el código JavaScript necesario para que utilizando un bucle for calcule 
+        el valor de x elevado a y. ¿Funciona correctamente si y es un valor negativo? */
+
+        let correcto;
+        let base;
+        let potencia;
+        do {
+            base = parseInt(prompt("Introduce la base de la potencia:"));
+            potencia = parseInt(prompt("Introduce su potencia:"));
+            correcto = !isNaN(base) && !isNaN(potencia);
+        } while(!correcto);
+
+        if (potencia == 0) {
+            document.write(base + " elevado a " + potencia + " = 1");
+        }
+
+        let resultado = 1;
+        if (potencia > 0) {
+            for (let x = 1; x <= potencia; x++) {
+                resultado *= base;
+            }
+            document.write(base + " elevado a " + potencia + " = " + resultado);
+        }
+
+        
+        if (potencia < 0) {
+            potencia = potencia * -1;
+            for (let x = 1; x <= potencia; x++) {
+                resultado *= base;
+            }
+            let resultadoFinal = 1 / resultado;
+            document.write(base + " elevado a " + potencia + " = " + resultadoFinal);
+        }
+    </script>
+    
+</body>
+</html>

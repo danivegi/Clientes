@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Vamos a crear un objeto llamada Diputado. Con varios diputados haremos
+        un array llamado arrayParlamento. */
+
+        function Diputado(nombre, apellidos, dni, edad, partido) {
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.dni = dni;
+            this.edad = edad;
+            this.partido = partido;
+
+            this.getNombre = function () {
+                return this.nombre;
+            }
+
+            this.setNombre = function (nombre) {
+                this.nombre = nombre;
+            }
+
+            this.getApellidos = function () {
+                return this.apellidos;
+            }
+
+            this.setApellidos = function (apellidos) {
+                this.apellidos = apellidos;
+            }
+
+            this.getDni = function () {
+                return this.dni;
+            }
+
+            this.setDni = function (dni) {
+                let numDni = dni.substring(0, 8);
+                let letraDni = dni.charAt(8);
+                letraDni = letraDni.toUpperCase();
+                let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+                let resto;
+                let letraCorrecta;
+
+                if (dni.length != 9) {
+                    this.dni = "incorrecto";
+                } else {
+                    resto = numDni % 23;
+                    letraCorrecta = letras[resto];
+                    if (letraCorrecta != letraDni) {
+                        this.dni = "incorrecto";
+                    } else {
+                        this.dni = dni;
+                    }
+                } 
+            }
+            this.setDni(dni);
+
+            this.getEdad = function () {
+                return this.edad;
+            }
+
+            this.setEdad = function (edad) {
+                if (edad < 17 || edad > 65) {
+                    this.edad = "incorrecto";
+                } else {
+                    this.edad = edad;
+                }
+            }
+            this.setEdad(edad);
+
+            this.getPartido = function () {
+                return this.partido;
+            }
+
+            this.setPartido = function (partido) {
+                this.partido = partido;
+            }
+        }
+
+        Diputado.prototype.toString = function (nombre, apellidos, dni, edad, partido) {
+            return ("Nombre: " + this.getNombre() + ", Apellidos: " + this.getApellidos() + ", Dni: " + this.getDni() +
+                ", Edad: " + this.getEdad() + ", Partido: " + this.getPartido());
+        }
+
+        let dipu1 =  new Diputado("Herminio", "Cabezas", "49190988S", 30, "Verde");
+        let dipu2 = new Diputado("Manolo", "Lopez", "52334295B", 60, "Azul");
+        let dipu3 = new Diputado("Jacobo", "Albertos", "31665729L", 18, "Amarillo");
+        let dipu4 = new Diputado("Lola", "Ramirez", "31665729P", 15, "Amarillo");
+
+        let arrayParlamento = [dipu1, dipu2, dipu3, dipu4];
+        arrayParlamento.sort(function(a, b) {
+            return a.getEdad() - b.getEdad();
+        })
+
+        for (let x = 0; x < arrayParlamento.length; x++) {
+            console.log(arrayParlamento[x].toString());
+        }
+        
+
+    </script>
+
+</body>
+
+</html>

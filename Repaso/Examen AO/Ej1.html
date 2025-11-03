@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Escriba un programa en JavaScript que:
+
+            Pida al usuario un número entre 1 y 10 y lo valide.
+
+            Una vez ingresado correctamente, calcule su factorial utilizando un bucle.
+
+            Muestre el resultado mediante alert(). */
+
+        let correcto;
+        let num;
+        do {
+            num = parseInt(prompt("Introduce un número de 1 a 10:"));
+            correcto = true;
+            if (isNaN(num) || num < 1 || num > 10) {
+                correcto = false;
+                alert("Error, el número debe ser numérico y entre 1 y 10.");
+            }
+        } while (!correcto);
+
+        let factorial = 1;
+        for (let x = num; x > 0; x--) {
+            factorial = factorial * x;
+        }
+        alert("El factorial de " + num + " es: " + factorial);
+        
+    </script>
+    
+</body>
+</html>

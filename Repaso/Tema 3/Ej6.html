@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Realiza un script que pida un número de filas y un número de columnas y escriba una tabla.
+        El número de filas y el número de columnas introducidas debe ser, mayor o igual a 10 y menor o igual a 20. Si el dato introducido no es correcto me lo vuelve a pedir. Es decir si el número de filas no son correcto me lo vuelve a pedir, y lo mismo con las columnas.
+        En la tabla en cada celda escribirá un número consecutivo en orden descendente.
+        Los números múltiplos de dos aparecerán en la tabla escritos con un fondo azul.
+        Los números múltiplos de tres aparecerán en la tabla escritos con un fondo rojo.
+        Los números múltiplos de siete aparecerán en la tabla escritos con un fondo amarillo.*/
+
+        let filas = 0;
+        let columnas = 0;
+        let correcto;
+
+        do {
+            filas = parseInt(prompt("Introduce un numero de filas de 10 a 20:"));
+            correcto=true;
+            if (isNaN(filas) || filas < 10 || filas > 20) {
+                alert("Error, filas debe ser numérico y entre 10 y 20.");
+                correcto = false;
+            }
+        } while (!correcto);
+
+        do {
+            columnas = parseInt(prompt("Introduce un numero de columnas de 10 a 20:"));
+            correcto=true;
+            if (isNaN(columnas) || columnas < 10 || columnas > 20) {
+                alert("Error, columnas debe ser numérico y entre 10 y 20.");
+                correcto = false;
+            }
+        } while (!correcto);
+
+        let num = filas * columnas;
+        document.writeln("<table border=1px>");
+            for(let x = 0; x < filas; x++) {
+                document.writeln("<tr>");
+                for (let y = 0; y < columnas; y++) {
+                    if (num % 7 == 0) {
+                        document.writeln("<td bgcolor=yellow>" + num + "</td>");
+                    } else if (num % 3 == 0) {
+                        document.writeln("<td bgcolor=red>" + num + "</td>");
+                    } else if (num % 2 == 0) {
+                        document.writeln("<td bgcolor=blue>" + num + "</td>");
+                    } else {
+                        document.writeln("<td>" + num + "</td>");
+                    }
+                    num--;
+                }
+                document.writeln("</tr>");
+            }
+            document.writeln("</table>");
+    </script>
+    
+</body>
+</html>

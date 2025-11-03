@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Introduzca una frase:</h3>
+    <script>
+        /* Cree una página web con un área de texto y un botón. Al hacer clic en el botón, 
+        un script en JavaScript debe:
+        Obtener el texto escrito por el usuario.
+        Mostrar:
+        La cantidad total de palabras.
+        La primera y la última palabra.
+        Las palabras en orden inverso.
+        Las palabras ordenadas de la A a la Z.
+        Las palabras ordenadas de la Z a la A.
+        La salida debe mostrarse en el documento con document.write().*/
+
+        function generar(cadena) {
+            let frase = document.getElementById("cadena").value;
+            frase = frase.toLowerCase();
+            document.writeln("Frase: " + frase + "<br>");
+            let fraseAr = frase.split(" ");
+
+            document.writeln("Cantidad de palabras: " + fraseAr.length + "<br>");
+            document.writeln("Primera palabra: " + fraseAr[0] + "<br>");
+            document.writeln("Última palabra: " + fraseAr[fraseAr.length - 1] + "<br>");
+            document.writeln("Palabras en orden inverso: ");
+            for (let x = fraseAr.length-1; x >= 0; x--) {
+                document.writeln(fraseAr[x] + " ");
+            }
+            document.writeln("<br>");
+            document.writeln("Palabras ordenadas de la A a la Z: " + fraseAr.sort() + "<br>");
+            document.writeln("Palabras ordenadas de la Z a la A: " + fraseAr.sort().reverse());
+        }
+
+    </script>
+    <input type="text" name="cadena" id="cadena">
+    <input type="button" value="aceptar" onclick="generar()">
+</body>
+
+</html>

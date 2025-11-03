@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2.- Escribir los números primos comprencidos entre entre 1 y el número introducido a través un prompt.
+
+        let correcto;
+        let limite;
+        do {
+            limite = parseInt(prompt("Introduce un número límite mayor que 1 para sacar todos los números comprendidos entre ambos:"));
+            correcto = true;
+            if (isNaN(limite) || limite < 1) {
+                alert("Error, el número no es entero o superior a 1.");
+                correcto = false;
+            }
+        } while (!correcto);
+
+        let esPrimo;
+        for (let x = 1; x <= limite; x++) {
+            esPrimo = true;
+            for (let y = 2; y < x; y++) {
+                if (x % y == 0) {
+                    esPrimo = false;
+                    break;
+                }
+            }
+            if(esPrimo) {
+                document.writeln(x + "<br>");
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>

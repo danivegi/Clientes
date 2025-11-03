@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h2 id="texto">Pasa el ratón por encima de este texto</h2>
+
+    <script>
+        const texto = document.getElementById("texto");
+
+        texto.addEventListener("mouseover", function() {
+            texto.style.color = "red";
+            texto.style.fontSize = "30px";
+        });
+
+        texto.addEventListener("mouseout", function() {
+            texto.style.color = "black";
+            texto.style.fontSize = "20px";
+        });
+    </script>
+</body>
+</html>

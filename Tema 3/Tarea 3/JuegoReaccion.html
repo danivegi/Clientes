@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Reacción con setInterval</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #boton {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Reacción</h1>
+    <p>Vamos a comprobar tu velocidad de reacción...</p>
+    <p id="mensaje">Pulsa el botón cuando se ponga en verde!</p>
+    <button id="boton">Empezar</button>
+    <p id="resultado"></p>
+
+    <script>
+        let mensaje = document.getElementById("mensaje");
+        let boton = document.getElementById("boton");
+        let resultado = document.getElementById("resultado");
+
+        let contador = 0;
+        let intervalo;
+        let tiempoAleatorio;
+        let inicio;
+
+        boton.onclick = function() {
+            // Si estamos empezando
+            if (boton.textContent == "Empezar") {
+                mensaje.textContent = "Atentos, listos...";
+                boton.textContent = "Espera...";
+                boton.style.backgroundColor = "red";
+                boton.disabled = true;
+
+                contador = 0;
+                tiempoAleatorio = Math.floor(Math.random() * 30) + 20; // da un valor entre 20 y 49 (para 2 o 4,9 segundos)
+
+                // Intervalo cada 100ms
+                intervalo = setInterval(() => {
+                    contador++;
+
+                    // cuando pasa el tiempo aleatorio, se cambia el boton a '¡ya!'
+                    if (contador >= tiempoAleatorio) {
+                        clearInterval(intervalo);
+                        mensaje.textContent = "¡Ahora!";
+                        boton.style.backgroundColor = "green";
+                        inicio = Date.now();
+                        boton.disabled = false;
+                        boton.textContent = "¡¡¡¡Ya!!!!";
+                    }
+                }, 100);
+            } 
+            // cuando el jugador pulsa en '¡ya!'
+            else {
+                let fin = Date.now();
+                let tiempo = fin - inicio;
+                resultado.textContent = "Tu tiempo de reacción fue de " + tiempo + " ms";
+                boton.textContent = "Empezar";
+                mensaje.textContent = "Pulsa el botón cuando se ponga en verde";
+                clearInterval(intervalo);
+                boton.style.backgroundColor = "blue";
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Añadir a la clase Array un método llamado sin() que permita filtrar 
+        los elementos del array original y obtenga un nuevo array con todos 
+        los valores diferentes al indicado: 
+
+        var array1 = [1, 2, 3, 4, 5];
+        var filtrado = array1.sin(4); // filtrado = [1, 2, 3, 5]
+        var filtrado = array1.sin(‘c’); // Error en el parámetro de la llamada al sin */
+
+        Array.prototype.sin = function(dato) {
+
+            if (isNaN(dato)) {
+                let error = "Error al introducir el dato";
+                return error;
+                
+            } else {
+                let elemento = parseInt(dato);
+                console.log(elemento);
+                let filtrado = [];
+
+                for (let x = 0; x < this.length; x++) {
+                    if (this[x] != elemento) {
+                        filtrado.push(this[x]);
+                    }
+                }
+                return filtrado;
+            }
+        }
+
+        let array1 = [1, 2, 3, 4, 5];
+        console.log(array1.sin(4));
+        console.log(array1.sin('c'));
+
+
+    </script>
+
+</body>
+
+</html>

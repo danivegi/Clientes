@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <p id="dwes">DAW</p>
+    <p id="dwec">DIW</p>
+    <p id="prog">PROG</p>
+
+    <script>
+        document.getElementById("dwes").addEventListener("dblclick", function() {
+            this.textContent = "Desarrollo Web en Entorno Servidor";
+        });
+        document.getElementById("dwec").addEventListener("dblclick", function() {
+            this.textContent = "Diseño de Interfaces Web";
+        });
+        document.getElementById("prog").addEventListener("dblclick", function() {
+            this.textContent = "Programación";
+        });
+    </script>
+</body>
+</html>

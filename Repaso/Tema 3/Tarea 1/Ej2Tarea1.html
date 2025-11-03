@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Página con imágenes</h1>
+    <script>
+        /* Diseñar una página html en la que aparezca una tabla con las siguientes
+        imágenes y que al hacer click sobre cada una de ellas me abra una nueva ventana
+        en la que aparece la imagen en su tamaño original y un botón cerrar para cerrar la página. */
+
+        
+        function abrir(dato) {
+            let ventana;
+            let foto = "imagenes/" + dato + ".jpg";
+            ventana = window.open("", "SegundaPag", "width=800 height=600");
+            ventana.document.writeln("<td><img src=" + foto + "></td>");
+            ventana.document.writeln("<br>");
+            ventana.document.writeln("<input type='button' value='Cerrar' onclick='window.close()'>");
+        }
+    </script>
+    <td><img src="imagenes/1.jpg" width="300" height="200" onclick="abrir(1)"></td>
+    <td><img src="imagenes/2.jpg" width="300" height="200" onclick="abrir(2)"></td>
+    <td><img src="imagenes/3.jpg" width="300" height="200" onclick="abrir(3)"></td>
+    <td><img src="imagenes/4.jpg" width="300" height="200" onclick="abrir(4)"></td>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Realice un programa en JavaScript que:
+        Recorra los números del 1 al 20 usando un bucle.
+        Muestre cada número con document.write().
+        Si el número es múltiplo de 3, de 5 o de 7, indíquelo entre paréntesis junto al número.
+        Si un número es múltiplo de más de uno de ellos, deben mostrarse todas las indicaciones correspondientes.
+        Después de mostrar cada 10 números, inserte una línea horizontal (<hr>). */
+
+        document.writeln("<hr>");
+        for (let x = 1; x <= 20; x++) {
+            document.writeln("El número " + x + ": ");
+            if (x % 3 == 0) {
+                document.writeln("(Es múltiplo de 3)");
+            } 
+            if (x % 5 == 0) {
+                document.writeln("(Es múltiplo de 5)");
+            }
+            if (x % 7 == 0) {
+                document.writeln("(Es múltiplo de 7)");
+            }
+            document.writeln("<br>");
+            if (x == 10) {
+                document.writeln("<hr>");
+            }
+        }
+        document.writeln("<hr>");
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Modificar la función anterior para que permita definir el texto que indica que la cadena se ha truncado:
+
+        var cadena = "hola mundo";
+        cadena2 = cadena.truncar(6, '***'); // cadena2 = "hol***" */
+
+        String.prototype.truncar = function(limite, codigo) {
+            if (isNaN(limite)) {
+                let error = "Error, el límite debe ser numérico";
+                return error;
+            } else {
+                let truncado = cadena.substring(0, limite);
+                truncado = truncado += codigo;
+                return truncado;
+            }
+        }
+        
+        let cadena = "hola mundo";
+        console.log(cadena);
+        let cadena2 = cadena.truncar(6, '***');
+        console.log(cadena2);
+        let cadena3 = cadena.truncar(2, 'xxx');
+        console.log(cadena3);
+
+    </script>
+
+</body>
+
+</html>
