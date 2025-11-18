@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="iniciar()"> <!-- Cuando la página termine de cargarse, ejecuta la función iniciar() -->
+
+    <!-- Párrafo original con un id para poder seleccionarlo desde JavaScript -->
+    <p title="Texto de un párrafo" id="parrafito">
+        Esto es un ejemplo de <b>texto HTML<br />que puedes tener</b> en tu documento.
+    </p>
+
+    <script>
+        function iniciar() {
+            // Crear un nuevo elemento <p> vacío
+            let nuevoParrafo = document.createElement('p');
+
+            // Crear un nodo de texto con el contenido que queremos añadir
+            let nuevoTexto = document.createTextNode('Contenido añadido al párrafo.');
+
+            // Insertar el nodo de texto dentro del nuevo <p>
+            nuevoParrafo.appendChild(nuevoTexto);
+
+            // Buscar el párrafo original mediante su id y añadirle dentro el nuevo párrafo
+            document.getElementById('parrafito').appendChild(nuevoParrafo);
+        }
+    </script>
+
+</body>
+
+</html>

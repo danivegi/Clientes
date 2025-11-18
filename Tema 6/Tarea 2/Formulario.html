@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" &gt; <html
+    xml:lang="sp" lang="sp">
+
+<head>
+    <title>Añadir Contenido Dinamicamente usando el DOM</title>
+    <script type="text/javascript" src="ejercicio2.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        body {
+            background-color: #008246;
+        }
+
+        body,
+        td,
+        th {
+            color: #FFF;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        h1 {
+            color: #FFFFFF;
+        }
+
+        h5 {
+            font-size: 10px;
+            color: #008246;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>&nbsp;</p>
+    <table border="0">
+        <tr align="center">
+            <td colspan="2">
+                <h1>Solicitudes de escolarización curso 2014 / 15</h1>
+            </td>
+        </tr>
+        <tr>
+            <td width="170" rowspan="2"><img src="images/solicitud.gif" alt="" /></td>
+            <td height="97">
+                <h2>Solicitudes recibidas:</h2>
+                <form action="#">
+                    <table width="80%" border="0">
+                        <tr valign="middle">
+                            <td><strong>Nombre:
+                                    <input type="text" name="nombre" id="nombre" />
+                                </strong></td>
+                            <td><strong>Apellidos:
+                                    <input type="text" name="apellidos" id="apellidos" />
+                                </strong></td>
+                            <td><strong>Curso:
+                                    <select id="curso" name="curso" size="1">
+                                        <option value="0">seleciona un curso</option>
+                                        <option value="1">1º ESO</option>
+                                        <option value="2">2º ESO</option>
+                                        <option value="3">3º ESO</option>
+                                        <option value="4">4º ESO</option>
+                                    </select>
+                                </strong></td>
+                            <td colspan="3" align="center">
+                                <input type="button" id="addsolicitud" value="Añadir solicitud" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>Solicitudes registradas:</h2>
+                <table width="595" border="1">
+                    <tbody id="tablaDatos">
+                        <tr>
+                            <th width="69">Identificador</th>
+                            <th width="186">Nombre</th>
+                            <th width="214">Apellido</th>
+                            <th width="98">Curso</th>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
